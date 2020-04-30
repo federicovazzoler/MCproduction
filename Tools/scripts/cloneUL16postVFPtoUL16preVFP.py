@@ -1,3 +1,9 @@
+# clone existing UL16 prepIDs to preVFP prepIDs
+# https://hypernews.cern.ch/HyperNews/CMS/get/prep-ops/7076.html
+# run the script with python cloneUL16postVFPtoUL16preVFP.py --prepid TOP-RunIISummer19UL16wmLHEGEN-00XYZ TOP-RunIISummer19UL16wmLHEGEN-00ZYX
+# or with python cloneUL16postVFPtoUL16preVFP.py --prepid TOP-RunIISummer19UL16GEN-00XYZ TOP-RunIISummer19UL16GEN-00ZYX
+# use --notDev for running it outside of dev mode
+
 import sys
 import os
 import argparse
@@ -12,8 +18,8 @@ args = parser.parse_args()
 UL16PrepidsToClone = args.prepid
 if UL16PrepidsToClone == None or not all( ["RunIISummer19UL16GEN" in p or "RunIISummer19UL16wmLHEGEN" in p for p in UL16PrepidsToClone] ):
         print 'Please provide list of UL16 prepids to clone'
-        print 'e.g. python cloneUL16ToUL.py --prepid TOP-RunIISummer19UL16wmLHEGEN-00XYZ TOP-RunIISummer19UL16wmLHEGEN-00ZYX'
-        print 'or python cloneUL16ToUL.py --prepid TOP-RunIISummer19UL16GEN-00XYZ TOP-RunIISummer19UL16GEN-00ZYX'
+        print 'e.g. python cloneUL16postVFPtoUL16preVFP.py --prepid TOP-RunIISummer19UL16wmLHEGEN-00XYZ TOP-RunIISummer19UL16wmLHEGEN-00ZYX'
+        print 'or python cloneUL16postVFPtoUL16preVFP.py --prepid TOP-RunIISummer19UL16GEN-00XYZ TOP-RunIISummer19UL16GEN-00ZYX'
         sys.exit()
 
 # Double check if it's ok to run not in dev mode
