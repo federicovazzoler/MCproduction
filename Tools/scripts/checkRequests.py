@@ -36,9 +36,11 @@ for campaign in campaignsToSearch:
   foundRequests = mcm.get('requests', query='pwg=EGM&member_of_campaign={campaign}'.format(campaign = campaign), method='get')
   for foundRequest in foundRequests:
     print 'Request : ', foundRequest['dataset_name']
-    print ' -- status : ', foundRequest['status']
-    print ' -- prepid : ', foundRequest['prepid']
-    print ' -- number of events : ', foundRequest['total_events']
+    print ' -- status             : ', foundRequest['status']
+    print ' -- prepid             : ', foundRequest['prepid']
+    print ' -- number of events   : ', foundRequest['total_events']
     #print ' -- completed events : ', foundRequest['completed_events']
-    #print ' -- member of chain : ', foundRequest['member_of_chain']
+    print ' -- member of chain(s)'
+    for chain in range(0, len(foundRequest['member_of_chain'])):
+      print ' ----> ', foundRequest['member_of_chain'][chain]
     print ''
