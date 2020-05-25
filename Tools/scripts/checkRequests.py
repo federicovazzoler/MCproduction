@@ -27,20 +27,24 @@ os.system('cern-get-sso-cookie -u https://cms-pdmv.cern.ch/mcm/ -o ~/private/pro
 mcm = McM(dev=devMode)
 
 for campaign in campaignsToSearch:
-  print '*'*100
+  print '*'*(15 + len(campaign))
+  print '* CAMPAIGN :',campaign,'*'
+  print '*'*(15 + len(campaign))
   print ''
-  print 'Campaign : ', campaign
-  print ''
-  print '*'*100
   print ''
   foundRequests = mcm.get('requests', query='pwg=EGM&member_of_campaign={campaign}'.format(campaign = campaign), method='get')
   for foundRequest in foundRequests:
-    print 'Request : ', foundRequest['dataset_name']
-    print ' -- status             : ', foundRequest['status']
-    print ' -- prepid             : ', foundRequest['prepid']
-    print ' -- number of events   : ', foundRequest['total_events']
-    #print ' -- completed events : ', foundRequest['completed_events']
+    print 'Request : ',foundRequest['dataset_name']
+    print '-'*(11 + len(foundRequest['dataset_name']))
+    print ''
+    print ' -- link               : https://cms-pdmv.cern.ch/mcm/requests?prepid={0}'.format(foundRequest['prepid']) 
+    print ' -- status             :',foundRequest['status']
+    print ' -- prepid             :',foundRequest['prepid']
+    print ' -- number of events   :',foundRequest['total_events']
+    #print ' -- completed events :', foundRequest['completed_events']
     print ' -- member of chain(s)'
     for chain in range(0, len(foundRequest['member_of_chain'])):
-      print ' ----> ', foundRequest['member_of_chain'][chain]
+      print ' ---->',foundRequest['member_of_chain'][chain]
     print ''
+    print ''
+
