@@ -53,7 +53,7 @@ def cloneToUL16PreVFP( prepidToClone ):
         return None
 
     modifiedPrepid = prepidToClone
-    modifiedPrepid['interested_pwg'] = ['TOP']
+    modifiedPrepid['interested_pwg'] = ['EGM']
     modifiedPrepid['member_of_campaign'] = campaign
     modifiedPrepid['ppd_tags'] = tag
 
@@ -65,7 +65,7 @@ def cloneToUL16PreVFP( prepidToClone ):
 
 for UL16PrepidName in UL16PrepidsToClone:
         print '\n---> Cloning',UL16PrepidName
-        if not ( 'TOP-RunIISummer19UL16wmLHEGEN' in UL16PrepidName ):
+        if not ( 'EGM-RunIISummer19UL16GEN' or 'EGM-RunIISummer19UL16wmLHEGEN' in UL16PrepidName ):
                 print 'This does not look like a UL16 prepid, skipping :',UL16PrepidName
                 continue
 
