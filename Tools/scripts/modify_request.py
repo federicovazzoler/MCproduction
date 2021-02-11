@@ -45,7 +45,7 @@ for req_prepid in prepidToSearch:
     #request[field_to_update] = [value]
     if field_to_update == 'interested_pwg':
       request[field_to_update] = [value]
-    else if field_to_update == 'memory':
+    elif field_to_update == 'memory':
       request[field_to_update] = value
 
     # Push it back to McM
@@ -54,4 +54,4 @@ for req_prepid in prepidToSearch:
 
     # Fetch the request again, after the update, to check whether value actually changed
     request2 = mcm.get('requests', request['prepid'])
-    print 'Request {0} field {1} BEFORE update: {2}'.format(request2['prepid'], field_to_update, request2[field_to_update])
+    print 'Request {0} field {1} AFTER update: {2}'.format(request2['prepid'], field_to_update, request2[field_to_update])

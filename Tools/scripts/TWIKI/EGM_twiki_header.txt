@@ -1,0 +1,125 @@
+---+ EGM Monte Carlo samples
+
+%TOC%
+
+---++ MC contact
+---+++ General info
+
+Mandate of MC contact: https://twiki.cern.ch/twiki/bin/viewauth/CMS/GeneratorContactPersons
+
+Generally speaking, please refer to the
+   * https://monte-carlo-production-tools.gitbook.io/project/
+   * https://twiki.cern.ch/twiki/bin/viewauth/CMS/GeneratorMain
+Tool used for production: https://cms-pdmv.cern.ch/mcm/ [[https://cms-pdmv.cern.ch/mcm/][<br />]]
+
+Tool used for monitoring: https://cms-pdmv-dev.cern.ch/pmp/ [[https://cms-pdmv-dev.cern.ch/pmp/][<br />]]
+
+Meeting to join: MCCM on Wednesdays (at least for the news part) https://indico.cern.ch/category/548/
+---+++ Steps to become a MC contact
+
+Here you'll find summarised all the steps necessary to become a MC contact.
+   * Register to McM as a generator contact: https://twiki.cern.ch/twiki/bin/viewauth/CMS/McM#Register
+   * Ask gen conveners the permission to upload LHE files to EOS disks: cms-phys-conveners-GEN@cern.ch
+   * Ask for a role increase to MC contact in order to be able to proceed to the questionnaire: hn-cms-prep-ops@cern.ch
+   * Subscribe to the HNs:
+      * https://hypernews.cern.ch/HyperNews/CMS/get/prep-ops.html
+      * https://hypernews.cern.ch/HyperNews/CMS/get/prep-ops.html
+      * https://hypernews.cern.ch/HyperNews/CMS/get/generators.html
+      * https://hypernews.cern.ch/HyperNews/CMS/get/datasets.html
+      * https://hypernews.cern.ch/HyperNews/CMS/get/dataopsrequests.html
+      * https://hypernews.cern.ch/HyperNews/CMS/get/comp-ops.html
+   * Complete the MC questionnaire and inform PdmV
+
+After all these steps the role in McM is increased to MC contact.
+
+---++ EGM standard MC requests
+
+Here are the details the current standard E/gamma MC request which should be requested for every MC campaign . The Flat PU is currently 0to70 (roughly the max the LHC can give us as far as I understand from Sudan's trigger workshop talk in dec) but can be adjusted to something sensible.
+
+|  *Sample Name*  |  *Total Events* |  *pileup*  |  *GT*  | *data tier*  |  *purpose*  |
+| !DYToEE_M-50_NNPDF31_TuneCP5_13TeV-powheg-pythia8  |  10M  | std  | std  |  !AOD,MINIAOD  |  efficiency & scale measurements  |
+| !DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8 |  50M  | std  |  std  |  !AOD,MINIAOD  |  efficiency & scale meas (alt sample for sys)  |
+| !DoubleElectron_FlatPt-1To300  |  10M  |  Flat 0to70  | std  |  RAW,AOD  |  regression resolution training  |
+| !DoubleElectron_FlatPt-300To1000 |  1.4M  |  Flat 0to70  | std  |  RAW,AOD  |  regression resolution training  |
+| !DoubleElectron_FlatPt-1000To1500 |  1M  |  Flat 0to70  | std  |  RAW,AOD  |  regression resolution training  |
+| !DoubleElectron_FlatPt-1500To3000 |  3M  |  Flat 0to70  | std  |  RAW,AOD  |  regression resolution training  |
+| !DoubleElectron_FlatPt-3000To4000 |  0.25M  |  Flat 0to70  | std  |  RAW,AOD  |  regression resolution training  |
+| !DoubleElectron_FlatPt-4000To5000 |  0.25M  |  Flat 0to70  | std  |  RAW,AOD  |  regression resolution training  |
+| !DoubleElectron_FlatPt-1To300  |  10M  |  Flat 0to70  | ideal IC  |  RAW,AOD  |  regression scale training  |
+| !DoubleElectron_FlatPt-300To1000 |  1.4M  |  Flat 0to70  | ideal IC  |  RAW,AOD  |  regression scale training  |
+| !DoubleElectron_FlatPt-1000To1500 |  1M  |  Flat 0to70  | ideal IC  |  RAW,AOD  |  regression scale training  |
+| !DoubleElectron_FlatPt-1500To3000 |  3M  |  Flat 0to70  | ideal IC  |  RAW,AOD  |  regression scale training  |
+| !DoubleElectron_FlatPt-3000To4000 |  0.25M  |  Flat 0to70  | ideal IC  |  RAW,AOD  |  regression scale training  |
+| !DoubleElectron_FlatPt-4000To5000 |  0.25M  |  Flat 0to70  | ideal IC  |  RAW,AOD  |  regression scale training  |
+| !DoublePhoton_FlatPt-5To300  |  10M  |  Flat 0to70  | std  |  RAW,AOD  |  regression resolution training  |
+| !DoublePhoton_FlatPt-300To1000 |  1.4M |  Flat 0to70  | std  |  RAW,AOD  |  regression resolution training  |
+| !DoublePhoton_FlatPt-1000To1500 |  1M  |  Flat 0to70  | std  |  RAW,AOD  |  regression resolution training  |
+| !DoublePhoton_FlatPt-1500To3000 |  3M  |  Flat 0to70  | std  |  RAW,AOD  |  regression resolution training  |
+| !DoublePhoton_FlatPt-3000To4000 |  0.25M  |  Flat 0to70  | std  |  RAW,AOD  |  regression resolution training  |
+| !DoublePhoton_FlatPt-4000To5000 |  0.25M  |  Flat 0to70  | std  |  RAW,AOD  |  regression resolution training  |
+| !DoublePhoton_FlatPt-5To300  |  10M  |  Flat 0to70  | ideal IC  |  RAW,AOD  |  regression scale training  |
+| !DoublePhoton_FlatPt-300To1000 |  1.4M |  Flat 0to70  | ideal IC  |  RAW,AOD  |  regression scale training  |
+| !DoublePhoton_FlatPt-1000To1500 |  1M  |  Flat 0to70  | ideal IC  |  RAW,AOD  |  regression scale training  |
+| !DoublePhoton_FlatPt-1500To3000 |  3M  |  Flat 0to70  | ideal IC  |  RAW,AOD  |  regression scale training  |
+| !DoublePhoton_FlatPt-3000To4000 |  0.25M  |  Flat 0to70  | ideal IC  |  RAW,AOD  |  regression scale training  |
+| !DoublePhoton_FlatPt-4000To5000 |  0.25M  |  Flat 0to70  | ideal IC  |  RAW,AOD  |  regression scale training  |
+| !DoublePhotonNoMaterial_FlatPt-0p01To10 | 5M  |  Flat 0to70 | no material |  RAW,AOD  |  PF Cluster corrections  |
+| !DoublePhotonNoMaterial_FlatPt-0p01To10 | 5M  |  noPU  |  no material  |  RAW,AOD  |  PF Cluster corrections  |
+| !DoublePhotonNoMaterial_FlatPt-10To300 | 5M  | Flat 0to70  |  no material  |  RAW,AOD  |  PF Cluster corrections  |
+| !DoublePhotonNoMaterial_FlatPt-10To300 |  5M  |  noPU  |  no material  |  RAW,AOD  |  PF Cluster corrections |
+| !DoublePhotonNoMaterial_FlatPt-1000To1500 |  0.2M  |  Flat 0to70  |  no material  |  RAW,AOD  |  PF Cluster correction validation  |
+| !DoublePhotonNoMaterial_FlatPt-1000To1500 |  0.2M  |  noPU  |  no material  |  RAW,AOD  |  PF Cluster correction validation  |
+| QCD_Pt-15to20_EMEnriched_TuneCP5_13TeV_pythia8  |  15M  |  std  |  std  |  !AOD,MINIAOD  |  ID tuning  |
+| QCD_Pt-20to30_EMEnriched_TuneCP5_13TeV_pythia8  |  15M  |  std  |  std  |  !AOD,MINIAOD  |  ID tuning  |
+| QCD_Pt-30to50_EMEnriched_TuneCP5_13TeV_pythia8  |  15M  |  std  |  std  |  !AOD,MINIAOD  |  ID tuning  |
+| QCD_Pt-50to80_EMEnriched_TuneCP5_13TeV_pythia8  |  10M  |  std  |  std  |  !AOD,MINIAOD  |  ID tuning  |
+| QCD_Pt-80to120_EMEnriched_TuneCP5_13TeV_pythia8  | 10M  |  std  |  std  |  !AOD,MINIAOD  |  ID tuning  |
+| QCD_Pt-120to170_EMEnriched_TuneCP5_13TeV_pythia8  |  10M  |  std  |  std  |  !AOD,MINIAOD  |  ID tuning  |
+| QCD_Pt-170to300_EMEnriched_TuneCP5_13TeV_pythia8  |  4M |  std  |  std  |  !AOD,MINIAOD  |  ID tuning  |
+| QCD_Pt-300toInf_EMEnriched_TuneCP5_13TeV_pythia8  |  3M  |  std  |  std  |  !AOD,MINIAOD  |  ID tuning  |
+| GJet_Pt-20to40_DoubleEMEnriched_MGG-80toInf_TuneCP5_13TeV_Pythia8  | 20M  |  std  |  std  |  !AOD,MINIAOD  |  ID tuning  |
+| GJet_Pt-20toInf_DoubleEMEnriched_MGG-40to80_TuneCP5_13TeV_Pythia8  |  10M  |  std  |  std  |  !AOD,MINIAOD  |  ID tuning  |
+| GJet_Pt-40toInf_DoubleEMEnriched_MGG-80toInf_TuneCP5_13TeV_Pythia8  |  10M  |  std  |  std  |  !AOD,MINIAOD  |  ID tuning  |
+
+---++ Current EGM samples for [[PhaseISpring17GS][PhaseIFall16 ]]campaign , PhaseISpring17 campaign , [[PhaseISpring17GS][RunnIISummer17 ]]campaign , RunIIFall17 campaign :
+
+[[https://docs.google.com/spreadsheets/d/1Iqi2NZ4uynA8XLI1Jq2b3cvquzyvjddVrCGetmjMWJg/edit#gid=0][link to spreadsheets for EGM samples]]
+
+---++ Current EGM GEN-SIM samples for RunIISummer15GS campaign
+
+| *PREP ID* | *Dataset name* | *Completed events* | *Total events* | *Cross section* |
+| EGM-RunIISummer15GS-00001 | SinglePion _FlatPt-1To15 | 4981558 | 5000000 | - |
+| EGM-RunIISummer15GS-00002 | SingleEta _FlatPt-1To15 | 5000000 | 5000000 | - |
+| EGM-RunIISummer15GS-00003 | SinglePhoton _Pt-50 | 4997384 | 5000000 | - |
+| EGM-RunIISummer15GS-00004 | SinglePhoton _FlatPt-300To3000 | 9957284 | 10000000 | - |
+| EGM-RunIISummer15GS-00005 | DoublePhoton _FlatPt-5To300 | 9958531 | 10000000 | - |
+| EGM-RunIISummer15GS-00006 | DoubleElectron _FlatPt-1To300 | 9958872 | 10000000 | - |
+| EGM-RunIISummer15GS-00007 | DoublePhotonNoMaterial _FlatPt-0p01To100 | 9972588 | 10000000 | - |
+| EGM-RunIISummer15GS-00008 | DYToEE _NNPDF30_13TeV-powheg-pythia8 | 49992000 | 50000000 | 1803 |
+| EGM-RunIISummer15GS-00009 | DYToEE _13TeV-amcatnloFXFX-pythia8 | 51184876 | 50000000 | 3570 |
+| EGM-RunIISummer15GS-00010 | DoublePhoton _FlatPt-300To6500 | 7956980 | 10000000 | - |
+| EGM-RunIISummer15GS-00011 | DoubleElectron _FlatPt-300To6500 | 9690460 | 10000000 | - |
+| EGM-RunIISummer15GS-00012 | DoublePhotonNoMaterial _FlatPt-100To6500 | 9918010 | 10000000 | - |
+| EGM-RunIISummer15GS-00014 | ZToEE _TuneCUETP8M1_13TeV-pythia8 | 9990030 | 10000000 | - |
+| EGM-RunIISummer15GS-00015 | DYToEE _NNPDF30_13TeV-powheg-pythia8 | 14979082 | 15000000 | 1803 |
+| EGM-RunIISummer15GS-00016 | SinglePion _FlatPt-1To15 (0T) | -1 | 5000000 | - |
+| EGM-RunIISummer15GS-00017 | DoublePhoton _FlatPt-5To300 (0T) | -1 | 10000000 | - |
+| EGM-RunIISummer15GS-00018 | DoubleElectron _FlatPt-1To300 (0T) | -1 | 10000000 | - |
+| EGM-RunIISummer15GS-00019 | DoublePhotonNoMaterial _FlatPt-0p01To100 (0T) | -1 | 10000000 | - |
+| EGM-RunIISummer15GS-00020 | DoublePhoton _FlatPt-300To6500 (0T) | -1 | 10000000 | - |
+| EGM-RunIISummer15GS-00021 | DoubleElectron _FlatPt-300To6500 (0T) | -1 | 10000000 | - |
+| EGM-RunIISummer15GS-00022 | DoublePhotonNoMaterial _FlatPt-100To6500 (0T) | -1 | 10000000 | - |
+| EGM-RunIISummer15GS-00023 | DoublePhoton _Pt-50 (0T) | -1 | 5000000 | - |
+
+---++ Current EGM MiniAOD samples for RunIISpring16DR80PU2016MiniAODv1 campaign
+
+[Available once campaign opened and samples requested]
+
+---++ Samples of interest from other POG/PAG
+
+|  *Sample Name*  |  *status*  |  *Monitoring*  |  *Total Events* |  *pileup*  |  *GT*  |  *CMSSW release*  | *data tier*  |  *chain*  |
+|  DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8  |  %GREENBG% done %ENDBG%  |  [[https://dmytro.web.cern.ch/dmytro/cmsprodmon/workflows.php?prep_id=task_TAU-RunIISummer19UL16SIM-00001][TAU-RunIISummer19UL16SIM-00001]]  |  100.0 M  |  Premix  |  106X_mcRun2_asymptotic_v13  |  CMSSW_10_6_12  |  MINIAOD  NANOAOD  |  chain_RunIISummer19UL16wmLHEGEN_flowRunIISummer19UL16SIM_flowRunIISummer19UL16DIGIPremix_flowRunIISummer19UL16HLT_flowRunIISummer19UL16RECO_flowRunIISummer19UL16MiniAOD_flowRunIISummer19UL16NanoAOD  |
+|  DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8  |  %GREENBG% done %ENDBG%  |  [[https://dmytro.web.cern.ch/dmytro/cmsprodmon/workflows.php?prep_id=task_HIG-RunIISummer19UL16wmLHEGEN-00260][HIG-RunIISummer19UL16wmLHEGEN-00260]]  |  200.0 M  |  Premix  |  106X_mcRun2_asymptotic_v13  |  CMSSW_10_6_12  |  MINIAOD  NANOAOD  |  chain_RunIISummer19UL16wmLHEGEN_flowRunIISummer19UL16SIM_flowRunIISummer19UL16DIGIPremix_flowRunIISummer19UL16HLT_flowRunIISummer19UL16RECO_flowRunIISummer19UL16MiniAOD_flowRunIISummer19UL16NanoAOD  |
+
+---++ EGM samples for UL and Run 3 campaigns
+

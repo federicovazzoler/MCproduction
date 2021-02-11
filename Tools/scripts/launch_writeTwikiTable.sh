@@ -1,0 +1,41 @@
+#!/bin/bash
+
+CAMPAIGNS=""
+CAMPAIGNS=$CAMPAIGNS" RunIISummer19UL16wmLHEGENAPV"
+CAMPAIGNS=$CAMPAIGNS" RunIISummer19UL16wmLHEGEN"
+CAMPAIGNS=$CAMPAIGNS" RunIISummer19UL16GENAPV"
+CAMPAIGNS=$CAMPAIGNS" RunIISummer19UL16GEN"
+CAMPAIGNS=$CAMPAIGNS" RunIISummer19UL17wmLHEGEN"
+CAMPAIGNS=$CAMPAIGNS" RunIISummer19UL17GEN"
+CAMPAIGNS=$CAMPAIGNS" RunIISummer19UL18wmLHEGEN"
+CAMPAIGNS=$CAMPAIGNS" RunIISummer19UL18GEN"
+CAMPAIGNS=$CAMPAIGNS" RunIISummer20UL16wmLHEGENAPV"
+CAMPAIGNS=$CAMPAIGNS" RunIISummer20UL16wmLHEGEN"
+CAMPAIGNS=$CAMPAIGNS" RunIISummer20UL17wmLHEGEN"
+CAMPAIGNS=$CAMPAIGNS" RunIISummer20UL18wmLHEGEN"
+CAMPAIGNS=$CAMPAIGNS" RunIISummer20UL16GENAPV"
+CAMPAIGNS=$CAMPAIGNS" RunIISummer20UL16GEN"
+CAMPAIGNS=$CAMPAIGNS" RunIISummer20UL17GEN"
+CAMPAIGNS=$CAMPAIGNS" RunIISummer20UL18GEN"
+CAMPAIGNS=$CAMPAIGNS" Run3Summer19GS"
+CAMPAIGNS=$CAMPAIGNS" Run3Summer19wmLHEGS"
+CAMPAIGNS=$CAMPAIGNS" Run3Winter20GS"
+CAMPAIGNS=$CAMPAIGNS" Run3Winter20wmLHEGS"
+
+for CAMPAIGN in $CAMPAIGNS; do
+  echo ""
+  echo "Processing campaing: ${CAMPAIGN}"
+  echo ""
+  python writeTwikiTable.py --campaign $CAMPAIGN 
+  echo ""
+  echo "------------------------------------------------"
+done
+
+echo ""
+echo "Merging txt files..."
+python mergeTxt.py "${CAMPAIGNS}"
+echo ""
+echo "To copy at home:"
+echo ""
+echo "scp fvazzole@lxplus.cern.ch:work/MCproduction/Tools/scripts/TWIKI/finalTable.txt Desktop/"
+echo ""

@@ -46,6 +46,7 @@ for campaign in campaignsToSearch:
     nReqSubmitted = 0
     nReqDone = 0
     reqToValidate_list = []
+    reqToApprove_list = []
 
 #    if args.table == 'true': 
 #      outputFile = open('EGM_requests_' + campaign + '.txt','w')
@@ -61,7 +62,10 @@ for campaign in campaignsToSearch:
           print '!!! FAILED !!!'
           print ''
           reqToValidate_list.append(foundRequest['prepid'])
-        print ' -- link                   : https://cms-pdmv.cern.ch/mcm/requests?prepid={0}'.format(foundRequest['prepid']) 
+        if foundRequest['approval'] == 'validation' and foundRequest['status'] == 'validation': 
+          reqToApprove_list.append(foundRequest['prepid'])
+#        print ' -- link                   : https://cms-pdmv.cern.ch/mcm/requests?prepid={0}'.format(foundRequest['prepid']) 
+        print ' -- link                   : https://dmytro.web.cern.ch/dmytro/cmsprodmon/workflows.php?prep_id=task_{0}'.format(foundRequest['prepid']) 
         print ' -- status                 :',foundRequest['status']
         print ' -- tags                   :',foundRequest['tags']
         print ' -- approval               :',foundRequest['approval']
@@ -98,8 +102,17 @@ for campaign in campaignsToSearch:
   print '-- submitted     :',nReqSubmitted
   print '-- done          :',nReqDone
   print '-'*26
-  print ''
-  print 'prepid to validate'
-  print 'python validateRequest.py --notDev --prepid',
-  for prepid in range(len(reqToValidate_list)): 
-    print reqToValidate_list[prepid],
+  if args.verbose == 'true':
+    print ''
+    print 'prepid to validate'
+    print ''
+    print 'python validateRequest.py --notDev --prepid',
+    for prepid in range(len(reqToValidate_list)): 
+      print reqToValidate_list[prepid],
+    print ''
+    print ''
+    print 'prepid to approve'
+    print ''
+    print 'python validateRequest.py --notDev --prepid',
+    for prepid in range(len(reqToApprove_list)): 
+      print reqToApprove_list[prepid],
